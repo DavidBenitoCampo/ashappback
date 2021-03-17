@@ -29,7 +29,7 @@ connection.connect((err) => {
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/products');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-app.use('/products', usersRouter);
+app.use('/products', productsRouter);
 
 
 

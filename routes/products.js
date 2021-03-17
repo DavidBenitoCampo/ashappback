@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// /users
+// /products
 router.get('/', function (req, res, next) {
   res.send('Listado de users');
 });
