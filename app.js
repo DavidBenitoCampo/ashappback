@@ -32,7 +32,7 @@ require('./dbConfig')();
 
 
 var indexRouter = require('./routes/index');
-var productsRouter = require('./routes/products');
+var productsRouter = require('./routes/api/products');
 
 var app = express();
 
