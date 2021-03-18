@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { getAllProducts, getByIdProduct, create, deleteById } = require('../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById } = require('../../models/product');
 
 // /products
 router.get('/', (req, res) => {
