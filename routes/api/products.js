@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { getAllProducts, getByIdProduct, create, deleteById } = require('../../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
 
 // /products
 router.get('/', (req, res) => {
@@ -21,7 +21,7 @@ router.get('/:idProduct', async (req, res) => {
 })
 
 // //products/new
-router.post('/new', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const result = await create(req.body);
     res.json(result);
@@ -30,14 +30,14 @@ router.post('/new', async (req, res) => {
   }
 });
 
-router.put('/update', async (req, res) => {
+router.put('/', async (req, res) => {
   const result = await updateById(req.body)
+  res.json(result);
   console.log(result);
-  res.redirect('/products')
 });
 
 
-router.delete('/delete/:idProducto', async (req, res) => {
+router.delete('/:idProduct', async (req, res) => {
   try {
     const result = await deleteById(req.params.idProduct);
     res.json(result);

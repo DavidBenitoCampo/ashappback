@@ -29,19 +29,20 @@ const getByIdProduct = (pId) => {
 }
 
 const deleteById = (pId) => {
+    console.log(pId)
     return new Promise((resolve, reject) => {
-        db.query('delete from register_user where id = ?', [pId], (err, result) => {
+        db.query('delete from register_product where id = ?', [pId], (err, result) => {
             if (err) return reject(err);
             resolve(result);
         })
     });
 }
 
-const updateById = ({ tipo_producto, precio, imagen, producto }) => {
+const updateById = ({ tipo_producto, precio, imagen, producto, id }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'update register_user set tipo_producto = ?, precio = ?, imagen = ?, producto = ? where id = ?',
-            [tipo_producto, precio, imagen, producto],
+            'update register_product set tipo_producto = ?, precio = ?, imagen = ?, producto = ? where id = ?',
+            [tipo_producto, precio, imagen, producto, id],
             (err, result) => {
                 if (err) return reject(err);
                 resolve(result);

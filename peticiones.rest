@@ -3,15 +3,34 @@ GET http://localhost:3000/products
 
 
 ###
-GET http://localhost:3000/products/:idProduct
+GET http://localhost:3000/products/1
 
 ###
-POST http://localhost:3000/products/new
+POST http://localhost:3000/products
+Content-Type: application/json
 
+{
+    "tipo_producto": "chaqueta",
+    "precio": "100",
+    "imagen": "x",
+    "producto": "parka the north face"
+
+}
 
 ###
-PUT http://localhost:3000/products/update
+PUT http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "id": "7",
+    "tipo_producto": "chaqueta",
+    "precio": "200",
+    "imagen": "x",
+    "producto": "parka the north face"
+}
 
 ###
-DELETE  http://localhost:3000/products/delete/:idProduct
+DELETE  http://localhost:3000/products/7
+Content-Type: application/json
+
 
