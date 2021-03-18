@@ -32,7 +32,7 @@ const getByIdUser = (pId) => {
 
 const deleteByIdUser = (pId) => {
     return new Promise((resolve, reject) => {
-        db.query('DELETE * FROM register_user WHERE id=?', [pId], (err, result) => {
+        db.query('DELETE FROM register_user WHERE id = ?', [pId], (err, result) => {
             if (err) return reject(err)
             resolve(result)
         });

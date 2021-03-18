@@ -1,11 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD:routes/api/products.js
 const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
-=======
-const { getAllProducts, getByIdProduct, create, deleteById } = require('../../models/product');
->>>>>>> usuarios:routes/products.js
 
 // /products
 router.get('/', (req, res) => {
