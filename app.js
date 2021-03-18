@@ -32,7 +32,12 @@ require('./dbConfig')();
 
 
 var indexRouter = require('./routes/index');
+<<<<<<< HEAD
 var productsRouter = require('./routes/api/products');
+=======
+var productsRouter = require('./routes/products');
+var usersRouter = require('./routes/users');
+>>>>>>> usuarios
 
 var app = express();
 
@@ -51,6 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
+app.use('/users', usersRouter);
 
 
 
