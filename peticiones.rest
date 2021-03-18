@@ -1,12 +1,17 @@
 ### / 1 . - Petición para mostrar todos los productos
 GET http://localhost:3000/products
 
-###
-GET http://localhost:3000/products/new
 
 ###
-POST http://localhost:3000/products/create
+GET http://localhost:3000/products/:idProduct
 
 ###
+POST http://localhost:3000/products/new
 
+
+###
+PUT http://localhost:3000/products/update
+
+###
+DELETE  http://localhost:3000/products/delete/:idProduct
 

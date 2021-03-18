@@ -5,24 +5,27 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
+//Requiero la conexión con la base de datos a través del dbConfig
+require('./dbConfig')();
+
 /* PRUEBA DE CONEXIÓN A LA BASE DE DATOS */
 
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '',
-  port: '3306', //8889 para mac.
-  database: 'aschapp' //Se modifica según el tipo de baso al que quieras acceder.
-});
+// const mysql = require('mysql');
+// const connection = mysql.createConnection({
+//   host: '127.0.0.1',
+//   user: 'root',
+//   password: '',
+//   port: '3306', //8889 para mac.
+//   database: 'aschapp' //Se modifica según el tipo de baso al que quieras acceder.
+// });
 
-connection.connect((err) => {
-  console.log(err);
-  console.log('Estás conectado');
-  connection.query('SELECT * FROM register_product', (err, rows) => {
-    console.log(rows);
-  })
-});
+// connection.connect((err) => {
+//   console.log(err);
+//   console.log('Estás conectado');
+//   connection.query('SELECT * FROM register_product', (err, rows) => {
+//     console.log(rows);
+//   })
+// });
 
 
 /* FIN PRUBEA CONEXIÓN A LA BASE DE DATOS*/
