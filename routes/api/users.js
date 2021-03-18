@@ -20,8 +20,35 @@ router.get('/:idUser', async (req, res) => {
     }
 });
 
-
 //crear un usuario
+router.post('/', async (req, res) => {
+    try {
+        const result = await createUser(req.body);
+        res.json(result);
+    } catch (error) {
+        res.status(422).json({ error: error.message })
+    }
+});
+
+//borrar un usuario
+router.delete('/:idUser', async (req, res) => {
+    try {
+        const result = await deleteByIdUser(req.params.idUser)
+        res.json(result)
+    } catch (error) {
+        res.status(422).json({ error: error.message })
+    }
+});
+
+//editar??
+router.put('/', async (req, res) => {
+    const result = await updateByIdUser(req.body);
+    res.json(result);
+    console.log(result);//no tengo claro el motivo de por que ponemos un console log aquí
+});
+
+
+
 
 
 module.exports = router;

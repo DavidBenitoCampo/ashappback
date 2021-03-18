@@ -37,3 +37,36 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/users
 
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "nombre": "Carla", 
+    "apellidos": "Verdejo", 
+    "fecha_nacimiento": "1999-10-10",
+    "email": "cvdj@gmail.com",
+    "contraseña": "12345", 
+    "rol": "vendedor", 
+    "foto": "x",
+    "nickname": "crv"
+}
+
+###
+DELETE http://localhost:3000/users/3
+Content-Type: application/json
+
+###
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "nombre": "Alba", 
+    "apellidos": "Verdejo", 
+    "fecha_nacimiento": "1998-10-10",
+    "email": "cvdj@gmail.com",
+    "contraseña": "12345", 
+    "rol": "vendedor", 
+    "foto": "x",
+    "nickname": "crv"
+}
