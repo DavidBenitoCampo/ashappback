@@ -10,10 +10,10 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "tipo_producto": "chaqueta",
-    "precio": "100",
-    "imagen": "x",
-    "producto": "parka the north face"
+    "tipo_producto": "ropa interior fem",
+    "precio": "30",
+    "imagen": "http://localhost:3000/images/FyckiukcwAv7Ido9v64S1Xl5lCdefdFB_vJ3dhQMplk.jpg",
+    "producto": "lencería"
 
 }
 
@@ -34,39 +34,3 @@ DELETE  http://localhost:3000/products/7
 Content-Type: application/json
 
 
-###
-GET http://localhost:3000/users
-
-###
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-    "nombre": "Carla", 
-    "apellidos": "Verdejo", 
-    "fecha_nacimiento": "1999-10-10",
-    "email": "cvdj@gmail.com",
-    "contraseña": "12345", 
-    "rol": "vendedor", 
-    "foto": "x",
-    "nickname": "crv"
-}
-
-###
-DELETE http://localhost:3000/users/3
-Content-Type: application/json
-
-###
-PUT http://localhost:3000/users
-Content-Type: application/json
-
-{
-    "nombre": "Alba", 
-    "apellidos": "Verdejo", 
-    "fecha_nacimiento": "1998-10-10",
-    "email": "cvdj@gmail.com",
-    "contraseña": "12345", 
-    "rol": "vendedor", 
-    "foto": "x",
-    "nickname": "crv"
-}
