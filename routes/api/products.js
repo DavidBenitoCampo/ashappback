@@ -1,7 +1,19 @@
-var express = require('express');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'public/images' });
 var router = express.Router();
 
+const app = express();
+
 const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
+
+
+app.listen(3000, () => {
+  console.log(`Servidor escucha`)
+})
+
 
 // /products
 router.get('/', (req, res) => {

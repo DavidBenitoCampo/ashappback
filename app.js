@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
+
 //Requiero la conexión con la base de datos a través del dbConfig
 require('./dbConfig')();
 
@@ -41,6 +42,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
 
 app.use(cors());
 app.use(logger('dev'));
