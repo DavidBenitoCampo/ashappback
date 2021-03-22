@@ -10,10 +10,6 @@ const app = express();
 const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
 
 
-app.listen(3000, () => {
-  console.log(`Servidor escucha`)
-})
-
 
 // /products
 router.get('/', (req, res) => {
