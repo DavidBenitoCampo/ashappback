@@ -7,11 +7,11 @@ const getAllProducts = () => {
     })
 };
 
-const create = ({ tipo_producto, precio, imagen, producto }) => {
+const create = (pObject) => {
     return new Promise((resolve, reject) => {
         //- Meto una interrogación de cierre por cada uno de los valores que quiero meter, como segundo parámetro:
         db.query('INSERT INTO register_product (tipo_producto, precio, imagen, producto) values (?, ?, ?, ?)',
-            [tipo_producto, precio, imagen, producto], (err, result) => {
+            [pObject.tipo_producto, pObject.precio, pObject.imagen, pObject.producto], (err, result) => {
                 if (err) return reject(err);
                 resolve(result);
             })
