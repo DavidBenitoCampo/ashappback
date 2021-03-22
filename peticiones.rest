@@ -1,19 +1,24 @@
 ### / 1 . - Petición para mostrar todos los productos
-GET http://localhost:3000/products
+GET http://localhost:3000/users
 
 
 ###
-GET http://localhost:3000/products/1
+GET http://localhost:3000/users/2
 
 ###
-POST http://localhost:3000/products
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "tipo_producto": "ropa interior fem",
-    "precio": "30",
-    "imagen": "http://localhost:3000/images/FyckiukcwAv7Ido9v64S1Xl5lCdefdFB_vJ3dhQMplk.jpg",
-    "producto": "lencería"
+  "nombre": "jjjj",
+  "apellidos": "jjjjjj",
+  "fecha_nacimiento": "2020-10-21",
+  "email": "jj@gmail.com",
+  "nickname": "pepe",
+  "contrasena": "123",
+  "confirmar_contrasena": "123",
+  "foto": "http",
+  "rol": "comprador"
 
 }
 
