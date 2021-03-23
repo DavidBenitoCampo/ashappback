@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
-const checkToken = require('./routes/middleware')
+
 
 
 //Requiero la conexión con la base de datos a través del dbConfig

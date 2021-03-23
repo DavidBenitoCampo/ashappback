@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/enter', async (req, res) => {
     const usuario = await getByEmail(req.body.email);
     if (usuario) {
         const iguales = bcrypt.compareSync(req.body.contrasena, usuario.contrasena);

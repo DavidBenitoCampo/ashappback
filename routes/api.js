@@ -9,4 +9,4 @@ router.use('/users', checkToken, usersRouter);
 router.use('/products', checkToken, productsRouter);
 router.use('/login', loginRouter);
 
-module.exports = router
+module.exports = router;
