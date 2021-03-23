@@ -50,11 +50,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 8ad49b05fe9d089d9e25dc790e5ef672a52ff1ef
 
 
 app.use('/', indexRouter);

@@ -6,20 +6,14 @@ GET http://localhost:3000/users
 GET http://localhost:3000/users/2
 
 ###
-POST http://localhost:3000/users
+POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "nombre": "jjjj",
-  "apellidos": "jjjjjj",
-  "fecha_nacimiento": "2020-10-21",
-  "email": "jj@gmail.com",
-  "nickname": "pepe",
-  "contrasena": "123",
-  "confirmar_contrasena": "123",
-  "foto": "http",
-  "rol": "comprador"
-
+  "tipo_producto": "ropa interior masc",
+  "precio": "10",
+  "producto": "slip",
+  "imagen": "x"
 }
 
 ###
