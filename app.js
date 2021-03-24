@@ -52,10 +52,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);

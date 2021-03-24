@@ -6,7 +6,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJjYWR1Y2Ei
 GET http://localhost:3000/api/users/2
 
 ###
-<<<<<<< HEAD
 POST http://localhost:3000/products
 Content-Type: application/json
 
@@ -15,7 +14,9 @@ Content-Type: application/json
   "precio": "10",
   "producto": "slip",
   "imagen": "x"
-=======
+}
+
+###
 POST http://localhost:3000/api/login
 Content-Type: application/json
 
@@ -23,14 +24,13 @@ Content-Type: application/json
   "nombre": "José",
   "apellidos": "Tomás",
   "fecha_nacimiento": "2020-10-21",
-  "email": "jt@gmail.com",
+  "email": "jp@gmail.com",
   "nickname": "pepe",
   "contrasena": "123456",
   "confirmar_contrasena": "123456",
   "foto": "http",
   "rol": "comprador"
 
->>>>>>> develop
 }
 
 ###
@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:3000/products/7
+DELETE  http://localhost:3000/api/users/1
 Content-Type: application/json
 
 ###
@@ -54,9 +54,11 @@ POST http://localhost:3000/api/login/enter
 Content-Type: application/json
 
 {
-  "email": "jt@gmail.com",
+  "email": "jp@gmail.com",
   "contrasena": "123456"
 }
 
 
-
+###
+GET http://localhost:3000/api/users/profile/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzIwMDgxMSwiaWF0IjoxNjE2NjAwODExfQ.8NeygrNu68nL-ZvgTdjhLnG5e1mHA7MS3UN87fbqWAM
