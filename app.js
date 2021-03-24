@@ -6,6 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 
+
 //Requiero la conexión con la base de datos a través del dbConfig
 require('./dbConfig')();
 
@@ -33,8 +34,7 @@ require('./dbConfig')();
 
 
 const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/api/products');
-const usersRouter = require('./routes/api/users');
+const apiRouter = require('./routes/api')
 
 
 const app = express();
@@ -52,10 +52,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
 
 app.use('/', indexRouter);
-app.use('/products', productsRouter);
-app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 
 

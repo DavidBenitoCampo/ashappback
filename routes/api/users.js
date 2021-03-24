@@ -1,7 +1,10 @@
 const express = require('express');
+
+
 const router = express.Router();
 
-const { createUser, getAllUsers, getByIdUser, deleteByIdUser, updateByIdUser } = require('../../models/user')
+
+const { getAllUsers, getByIdUser, deleteByIdUser, updateByIdUser } = require('../../models/user')
 
 //obtener todos los productos
 router.get('/', (req, res) => {
@@ -20,16 +23,7 @@ router.get('/:idUser', async (req, res) => {
     }
 });
 
-//crear un usuario
-router.post('/', async (req, res) => {
-    console.log('body', req.body);
-    try {
-        const result = await createUser(req.body);
-        res.json(result);
-    } catch (error) {
-        res.status(422).json({ error: error.message })
-    }
-});
+
 
 //borrar un usuario
 router.delete('/:idUser', async (req, res) => {
@@ -47,8 +41,6 @@ router.put('/', async (req, res) => {
     res.json(result);
     console.log(result);//no tengo claro el motivo de por que ponemos un console log aquí
 });
-
-
 
 
 
