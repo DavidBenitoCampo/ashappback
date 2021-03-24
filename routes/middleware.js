@@ -13,7 +13,7 @@ const checkToken = (req, res, next) => {
 
     let data;
     try {
-        const data = jwt.verify(token, 'lolita');
+        data = jwt.verify(token, 'lolita');
     } catch (error) {
         return res.json({ error: 'el token es incorrecto' })
     }
