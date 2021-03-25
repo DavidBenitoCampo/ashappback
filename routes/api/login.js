@@ -15,12 +15,14 @@ router.post('/', async (req, res) => {
         const result = await createUser(req.body);
         res.json(result);
     } catch (error) {
+        console.log(error)
         res.status(422).json({ error: error.message })
     }
 });
 
 router.post('/enter', async (req, res) => {
-    const usuario = await getByEmail(req.body.email);
+    console.log(req.body);
+    const usuario = await getByEmail(req.body.email)
     if (usuario) {
         const iguales = bcrypt.compareSync(req.body.contrasena, usuario.contrasena);
         if (iguales) {
