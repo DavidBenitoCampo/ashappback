@@ -43,9 +43,28 @@ POST http://localhost:3000/api/login/enter
 Content-Type: application/json
 
 {
-  "email": "jt@gmail.com",
+  "email": "david@gmail.com",
   "contrasena": "123456"
 }
 
+###
+POST http://localhost:3000/api/login
+Content-Type: application/json
 
+{
+  "nombre": "Carlos",
+  "apellidos": "Tomás",
+  "fecha_nacimiento": "2020-10-21",
+  "email": "jt@gmail.com",
+  "nickname": "pepe",
+  "contrasena": "123456",
+  "confirmar_contrasena": "123456",
+  "foto": "http",
+  "rol": "comprador"
+
+}
+
+###
+GET http://localhost:3000/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJjYWR1Y2EiOjE2MTcxOTg0MTQsImlhdCI6MTYxNjU5ODQxNH0.Uuut2cFabkIgigrI7Au1Rn0FwEA8GNyu0MRqjMHudfg
 

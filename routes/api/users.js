@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
 });
 
 //obtener un usuario
-router.get('/:idUser', async (req, res) => {
+router.get('/profile', async (req, res) => {
     try {
-        const result = await getByIdUser(req.params.idUser)
+        const result = await getByIdUser(req.userId)
         res.json(result);
     } catch (error) {
         res.status(422).json({ error: error.message });
