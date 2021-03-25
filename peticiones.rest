@@ -7,7 +7,8 @@ GET http://localhost:3000/api/users/2
 
 ###
 POST http://localhost:3000/products
-Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzIwMDgxMSwiaWF0IjoxNjE2NjAwODExfQ.8NeygrNu68nL-ZvgTdjhLnG5e1mHA7MS3UN87fbqWAM
+
 
 {
   "tipo_producto": "ropa interior masc",

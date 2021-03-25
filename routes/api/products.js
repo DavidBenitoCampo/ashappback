@@ -1,11 +1,11 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'public/images' });
+const fs = require('fs');
+
 var router = express.Router();
 
-const app = express();
 
 const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
 
@@ -29,12 +29,25 @@ router.get('/:idProduct', async (req, res) => {
 })
 
 // //products/new
-router.post('/', async (req, res) => {
+router.post('/', upload.single('imagen'), async (req, res) => {
+
+  // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
+  const extension = '.' + req.file.mimetype.split('/')[1];
+  // Obtengo el nombre de la nueva imagen
+  const newName = req.file.filename + extension;
+  // Obtengo la ruta donde estará, adjuntándole la extensión
+  const newPath = req.file.path + extension;
+  // Muevo la imagen para que resiba la extensión
+  fs.renameSync(req.file.path, newPath);
+
+  // Modifico el BODY para poder incluir el nombre de la imagen en la BD
+  req.body.imagen = newName;
+
   try {
-    const result = await create(req.body);
-    res.json(result);
-  } catch (error) {
-    res.status(422).json({ error: error.message })
+    const newProducto = await create(req.body);
+    res.json(newProducto);
+  } catch (err) {
+    res.json(err);
   }
 });
 
