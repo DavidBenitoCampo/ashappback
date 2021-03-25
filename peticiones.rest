@@ -3,12 +3,12 @@ GET http://localhost:3000/api/users
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJjYWR1Y2EiOjE2MTcxNzM5MjgsImlhdCI6MTYxNjU3MzkyOH0.pdVIzwJF661VHpEQMRSLK0s7Mmxa-FltHR5iGi41mK8
 
 ###
-GET http://localhost:3000/api/users/2
+GET http://localhost:3000/api/users/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1LCJjYWR1Y2EiOjE2MTcxNzM5MjgsImlhdCI6MTYxNjU3MzkyOH0.pdVIzwJF661VHpEQMRSLK0s7Mmxa-FltHR5iGi41mK8
 
 ###
 POST http://localhost:3000/products
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzIwMDgxMSwiaWF0IjoxNjE2NjAwODExfQ.8NeygrNu68nL-ZvgTdjhLnG5e1mHA7MS3UN87fbqWAM
-
 
 {
   "tipo_producto": "ropa interior masc",
@@ -25,7 +25,7 @@ Content-Type: application/json
   "nombre": "José",
   "apellidos": "Tomás",
   "fecha_nacimiento": "2020-10-21",
-  "email": "jp@gmail.com",
+  "email": "jt@gmail.com",
   "nickname": "pepe",
   "contrasena": "123456",
   "confirmar_contrasena": "123456",

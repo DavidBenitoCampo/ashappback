@@ -28,6 +28,11 @@ router.get('/:idProduct', async (req, res) => {
   }
 })
 
+
+
+
+
+
 // //products/new
 router.post('/', upload.single('imagen'), async (req, res) => {
 
@@ -50,6 +55,16 @@ router.post('/', upload.single('imagen'), async (req, res) => {
     res.json(err);
   }
 });
+
+
+
+
+
+
+
+
+
+
 
 router.put('/', async (req, res) => {
   const result = await updateById(req.body)
