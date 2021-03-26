@@ -24,11 +24,7 @@ const checkToken = (req, res, next) => {
         return res.json({ error: 'El token está caducado' });
     }
 
-<<<<<<< HEAD
-    req.userId = data.userId
-=======
     req.userId = data.userId;
->>>>>>> 84c774c66b1e6c7e2709a85f083fa6d047eddc83
 
     next();
 

@@ -40,20 +40,11 @@ const updateByIdUser = ({ nombre, apellidos, fecha_nacimiento, email, contrasena
 
 };
 
-const getProductsUserById = (pId) => {
-    return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM register_product where fk_user = ?', [pId], (err, rows) => {
-            if (err) return reject(err)
-            resolve(rows);
-        });
-    });
 
-}
 
 module.exports = {
     getAllUsers,
     getByIdUser,
     deleteByIdUser,
-    updateByIdUser,
-    getProductsUserById
+    updateByIdUser
 }

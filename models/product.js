@@ -52,10 +52,21 @@ const updateById = ({ tipo_producto, precio, imagen, producto, id }) => {
     });
 }
 
+const getProductsUserById = (pId) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM register_product where fk_user = ?', [pId], (err, rows) => {
+            if (err) return reject(err)
+            resolve(rows);
+        });
+    });
+
+}
+
 module.exports = {
     getAllProducts,
     create,
     getByIdProduct,
     deleteById,
-    updateById
+    updateById,
+    getProductsUserById
 }

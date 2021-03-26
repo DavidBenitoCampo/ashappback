@@ -7,7 +7,7 @@ var router = express.Router();
 
 const app = express();
 
-const { getAllProducts, getByIdProduct, create, deleteById, updateById } = require('../../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById } = require('../../models/product');
 
 
 
@@ -48,6 +48,18 @@ router.put('/', async (req, res) => {
 router.delete('/:idProduct', async (req, res) => {
   try {
     const result = await deleteById(req.params.idProduct);
+    res.json(result);
+  } catch (error) {
+    res.status(422).json({ error: error.message });
+  }
+});
+
+//Obtener los productos de un usuario determinado
+router.get('/user/:userId', async (req, res) => {
+  try {
+    console.log('rojo')
+    const result = await getProductsUserById(req.params.userId);
+    console.log(result)
     res.json(result);
   } catch (error) {
     res.status(422).json({ error: error.message });

@@ -54,11 +54,7 @@ POST http://localhost:3000/api/login/enter
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-  "email": "david@gmail.com",
-=======
   "email": "jp@gmail.com",
->>>>>>> 84c774c66b1e6c7e2709a85f083fa6d047eddc83
   "contrasena": "123456"
 }
 
@@ -66,26 +62,10 @@ Content-Type: application/json
 POST http://localhost:3000/api/login
 Content-Type: application/json
 
-<<<<<<< HEAD
-{
-  "nombre": "Carlos",
-  "apellidos": "Tomás",
-  "fecha_nacimiento": "2020-10-21",
-  "email": "jt@gmail.com",
-  "nickname": "pepe",
-  "contrasena": "123456",
-  "confirmar_contrasena": "123456",
-  "foto": "http",
-  "rol": "comprador"
-
-}
+###
+GET http://localhost:3000/api/products/user/20
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2EiOjE2MTcyNjQwNzMsImlhdCI6MTYxNjY2NDA3M30.JPFVBHlwr6J3wxHv4uWDnvplWf3-8QcceAocJ2S8G6s
 
 ###
-GET http://localhost:3000/api/users/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJjYWR1Y2EiOjE2MTcxOTg0MTQsImlhdCI6MTYxNjU5ODQxNH0.Uuut2cFabkIgigrI7Au1Rn0FwEA8GNyu0MRqjMHudfg
-
-=======
-###
-GET http://localhost:3000/api/users/profile/5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzIwMDgxMSwiaWF0IjoxNjE2NjAwODExfQ.8NeygrNu68nL-ZvgTdjhLnG5e1mHA7MS3UN87fbqWAM
->>>>>>> 84c774c66b1e6c7e2709a85f083fa6d047eddc83
+GET http://localhost:3000/api/users/profile/20
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2EiOjE2MTcyNjQwNzMsImlhdCI6MTYxNjY2NDA3M30.JPFVBHlwr6J3wxHv4uWDnvplWf3-8QcceAocJ2S8G6s

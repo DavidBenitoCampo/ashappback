@@ -14,19 +14,9 @@ router.get('/', (req, res) => {
 });
 
 //obtener un usuario
-router.get('/profile', async (req, res) => {
+router.get('/profile/:idUser', async (req, res) => {
     try {
-        const result = await getByIdUser(req.userId)
-        res.json(result);
-    } catch (error) {
-        res.status(422).json({ error: error.message });
-    }
-});
-
-//Obtener los productos de un usuario determinado
-router.get('/profile/:userId', async (req, res) => {
-    try {
-        const result = await getProductsUserById(req.userId);
+        const result = await getByIdUser(req.params.idUser)
         res.json(result);
     } catch (error) {
         res.status(422).json({ error: error.message });
