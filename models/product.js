@@ -68,7 +68,7 @@ const insertCarrito = (pProductId, pUserId) => {
     console.log(pProductId)
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO carrito(fk_user, fk_product) values (?, ?)',
-            [pProductId, pUserId], (err, result) => {
+            [pUserId, pProductId], (err, result) => {
                 if (err) return reject(err);
                 console.log(result);
                 resolve(result);

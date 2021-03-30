@@ -9,7 +9,7 @@ var router = express.Router();
 
 const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, insertCarrito } = require('../../models/product');
 
-
+const { getAllCarrito } = require('../../models/order');
 
 // /products
 router.get('/', (req, res) => {
@@ -17,6 +17,18 @@ router.get('/', (req, res) => {
     .then((rows) => { res.json(rows) })
     .catch((err) => { console.log(err) });
 });
+
+router.get('/carrito', async (req, res) => {
+  console.log(req.userId)
+  try {
+    const result = await getAllCarrito(req.userId);
+    res.json(result);
+    console.log(result)
+  } catch (error) {
+    res.status(422).json({ error: error.message });
+  }
+})
+
 
 // products/:idProduct
 router.get('/:idProduct', async (req, res) => {
@@ -56,19 +68,6 @@ router.post('/', upload.single('imagen'), async (req, res) => {
   }
 });
 
-router.post('/carrito/:productId', async (req, res) => {
-
-  const result = await insertCarrito(req.params.productId, req.userId);
-  res.json(result);
-  console.log(result)
-})
-
-
-
-
-
-
-
 
 
 router.put('/', async (req, res) => {
@@ -99,10 +98,11 @@ router.get('/user/:userId', async (req, res) => {
   }
 });
 
-router.get('/carrito/:productId', (req, res) => {
-  console.log(req.userId);
-  console.log(req.params.productId);
-
+//Insertar en la tabla carrito
+router.post('/carrito/:productId', async (req, res) => {
+  const result = await insertCarrito(req.params.productId, req.userId);
+  res.json(result);
+  console.log(result)
 })
 
 
