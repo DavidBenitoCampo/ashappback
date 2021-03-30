@@ -72,6 +72,7 @@ GET http://localhost:3000/api/users/profile/20
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2EiOjE2MTcyNjQwNzMsImlhdCI6MTYxNjY2NDA3M30.JPFVBHlwr6J3wxHv4uWDnvplWf3-8QcceAocJ2S8G6s
 
 ###
+<<<<<<< HEAD
 POST http://localhost:3000/api/products
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJjYWR1Y2EiOjE2MTczNTAyNTgsImlhdCI6MTYxNjc1MDI1OH0.3mRuz8Lg1xB5He_7fXJ9ztK_BCGXAnv2opSLbi3YnDE
 
@@ -105,3 +106,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJjYWR1Y2Ei
 ###
 GET http://localhost:3000/api/users/myProfile/
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJjYWR1Y2EiOjE2MTc3MDExMzgsImlhdCI6MTYxNzEwMTEzOH0.G4wfQo5QLWi-klsQF-xWJPCZelLRNv13UPN_eKV-S2Q
+=======
+POST http://localhost:3000/api/products/carrito/17
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzY5MjUyOSwiaWF0IjoxNjE3MDkyNTI5fQ.Ysd55KaulhtbWcHMzEnf-ineBs9KKAyGNmUojorgyGs
+
+###
+GET http://localhost:3000/api/products/carrito
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImNhZHVjYSI6MTYxNzcxODc1OCwiaWF0IjoxNjE3MTE4NzU4fQ.NZiK9sz8XiONsrNyUwDiqaNZJM5lPFH_PVbkOOCeds0
+>>>>>>> ac20660a022a2b5b50a92fdce4aec7b416cb879a

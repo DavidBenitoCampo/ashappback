@@ -7,9 +7,14 @@ const fs = require('fs');
 var router = express.Router();
 
 
+<<<<<<< HEAD
 const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, getByCategory } = require('../../models/product');
 
+=======
+const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, insertCarrito } = require('../../models/product');
+>>>>>>> ac20660a022a2b5b50a92fdce4aec7b416cb879a
 
+const { getAllCarrito } = require('../../models/order');
 
 // /products
 router.get('/', (req, res) => {
@@ -17,6 +22,18 @@ router.get('/', (req, res) => {
     .then((rows) => { res.json(rows) })
     .catch((err) => { console.log(err) });
 });
+
+router.get('/carrito', async (req, res) => {
+  console.log(req.userId)
+  try {
+    const result = await getAllCarrito(req.userId);
+    res.json(result);
+    console.log(result)
+  } catch (error) {
+    res.status(422).json({ error: error.message });
+  }
+})
+
 
 // products/:idProduct
 router.get('/:idProduct', async (req, res) => {
@@ -59,14 +76,6 @@ router.post('/', upload.single('imagen'), async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
 router.put('/', async (req, res) => {
   const result = await updateById(req.body)
   res.json(result);
@@ -94,6 +103,13 @@ router.get('/user/:userId', async (req, res) => {
     res.status(422).json({ error: error.message });
   }
 });
+
+//Insertar en la tabla carrito
+router.post('/carrito/:productId', async (req, res) => {
+  const result = await insertCarrito(req.params.productId, req.userId);
+  res.json(result);
+  console.log(result)
+})
 
 
 //filtro, obtener productos por categoria
