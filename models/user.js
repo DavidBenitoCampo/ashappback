@@ -28,10 +28,10 @@ const deleteByIdUser = (pId) => {
     });
 };
 
-const updateByIdUser = ({ nombre, apellidos, fecha_nacimiento, email, contrasena, rol, foto, nickname }) => {
+const updateByIdUser = ({ nombre, apellidos, rol, nickname }, idUser) => {
     return new Promise((resolve, reject) => {
-        db.query('UPDATE register_user SET nombre = ?, apellidos = ?, fecha_nacimiento = ?, email = ?, contrasena = ?, rol = ?, foto = ?, nickname = ?',
-            [nombre, apellidos, fecha_nacimiento, email, contrasena, rol, foto, nickname],
+        db.query('UPDATE register_user SET nombre = ?, apellidos = ?, rol = ?, nickname = ? WHERE id = ?',
+            [nombre, apellidos, rol, nickname, idUser],
             (err, result) => {
                 if (err) reject(err);
                 resolve(result)

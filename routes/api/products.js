@@ -7,7 +7,7 @@ const fs = require('fs');
 var router = express.Router();
 
 
-const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById } = require('../../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, getByCategory } = require('../../models/product');
 
 
 
@@ -36,6 +36,7 @@ router.get('/:idProduct', async (req, res) => {
 // //products/new
 router.post('/', upload.single('imagen'), async (req, res) => {
 
+  console.log(req.body)
   // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
   const extension = '.' + req.file.mimetype.split('/')[1];
   // Obtengo el nombre de la nueva imagen
@@ -93,6 +94,17 @@ router.get('/user/:userId', async (req, res) => {
     res.status(422).json({ error: error.message });
   }
 });
+
+
+//filtro, obtener productos por categoria
+router.get('/filtro/:tipo_producto', async (req, res) => {
+  try {
+    const result = await getByCategory(req.params.tipo_producto);
+    res.json(result);
+  } catch (error) {
+    res.status(422).json({ error: error.message });
+  }
+})
 
 
 

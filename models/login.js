@@ -1,8 +1,8 @@
 const createUser = (pObject) => {
-    console.log(pObject);
+    console.log('insert', pObject);
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO register_user (nombre, apellidos, fecha_nacimiento, email, contrasena, rol, foto, nickname) values (?, ?, ?, ?, ?, ?, ?,?)',
-            [pObject.nombre, pObject.apellidos, pObject.fecha_nacimiento, pObject.email, pObject.contrasena, pObject.rol, pObject.foto, pObject.nickname],
+            [pObject.nombre, pObject.apellidos, pObject.fecha_nacimiento, pObject.email, pObject.contrasena, pObject.rol, pObject.foto ? pObject.foto : 'imagen_pordefecto.jpg', pObject.nickname],
             (err, result) => {
                 if (err) reject(err);
                 resolve(result)

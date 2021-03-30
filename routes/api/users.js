@@ -23,6 +23,17 @@ router.get('/profile/:idUser', async (req, res) => {
     }
 });
 
+//obtenerMiPerfil
+router.get('/myprofile/', async (req, res) => {
+    try {
+        const result = await getByIdUser(req.userId)
+        res.json(result)
+    } catch (error) {
+        res.status(422).json({ error: error.message })
+    }
+});
+
+
 
 //borrar un usuario
 router.delete('/:idUser', async (req, res) => {
@@ -35,8 +46,8 @@ router.delete('/:idUser', async (req, res) => {
 });
 
 //editar??
-router.put('/', async (req, res) => {
-    const result = await updateByIdUser(req.body);
+router.put('/editar', async (req, res) => {
+    const result = await updateByIdUser(req.body, req.userId);
     res.json(result);
     console.log(result);//no tengo claro el motivo de por que ponemos un console log aquí
 });

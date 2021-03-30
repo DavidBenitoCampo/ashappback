@@ -62,11 +62,25 @@ const getProductsUserById = (pId) => {
 
 }
 
+const getByCategory = (tipo_producto) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'SELECT * FROM register_product WHERE tipo_producto=?',
+            [tipo_producto],
+            (err, rows) => {
+                if (err) return reject(err);
+                resolve(rows);
+            }
+        )
+    })
+}
+
 module.exports = {
     getAllProducts,
     create,
     getByIdProduct,
     deleteById,
     updateById,
-    getProductsUserById
+    getProductsUserById,
+    getByCategory
 }

@@ -22,15 +22,15 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-  "nombre": "José",
-  "apellidos": "Tomás",
-  "fecha_nacimiento": "2020-10-21",
-  "email": "jt@gmail.com",
-  "nickname": "pepe",
-  "contrasena": "123456",
-  "confirmar_contrasena": "123456",
-  "foto": "http",
-  "rol": "comprador"
+  "nombre": "Carlos",
+  "apellidos": "Perez",
+  "fecha_nacimiento": "2000-10-21",
+  "email": "carlos@gmail.com",
+  "nickname": "carlitos",
+  "contrasena": "1234",
+  "confirmar_contrasena": "1234",
+  "foto": "",
+  "rol": "vendedor"
 
 }
 
@@ -55,8 +55,8 @@ POST http://localhost:3000/api/login/enter
 Content-Type: application/json
 
 {
-  "email": "jp@gmail.com",
-  "contrasena": "123456"
+  "email": "andrea@gmail.com",
+  "contrasena": "1234"
 }
 
 ###
@@ -70,3 +70,38 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2Ei
 ###
 GET http://localhost:3000/api/users/profile/20
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2EiOjE2MTcyNjQwNzMsImlhdCI6MTYxNjY2NDA3M30.JPFVBHlwr6J3wxHv4uWDnvplWf3-8QcceAocJ2S8G6s
+
+###
+POST http://localhost:3000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJjYWR1Y2EiOjE2MTczNTAyNTgsImlhdCI6MTYxNjc1MDI1OH0.3mRuz8Lg1xB5He_7fXJ9ztK_BCGXAnv2opSLbi3YnDE
+
+{
+    "tipo_producto": "ropa interior masculina",
+    "precio": "200",
+    "imagen": "x",
+    "producto": "parka the north face"
+}
+
+###
+GET http://localhost:3000/api/products/filtro/calzado masc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJjYWR1Y2EiOjE2MTczNTAyNTgsImlhdCI6MTYxNjc1MDI1OH0.3mRuz8Lg1xB5He_7fXJ9ztK_BCGXAnv2opSLbi3YnDE
+
+###
+PUT http://localhost:3000/api/users/editar
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJjYWR1Y2EiOjE2MTc2OTQzOTAsImlhdCI6MTYxNzA5NDM5MH0.cKvqKzoeWsjhjg_3ipt35w1KNUr0xWlTsZ6LCmWLMX8
+
+{
+  "nombre": "Andreita",
+  "apellidos": "cometeelpollo",
+  "fecha_nacimiento": "2000-11-11",
+  "email": "cristian3@gmail.com",
+  "nickname": "crgomezsuarez",
+  "foto": "",
+  "rol": "comprador"
+
+}
+
+###
+GET http://localhost:3000/api/users/myProfile/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJjYWR1Y2EiOjE2MTc3MDExMzgsImlhdCI6MTYxNzEwMTEzOH0.G4wfQo5QLWi-klsQF-xWJPCZelLRNv13UPN_eKV-S2Q
