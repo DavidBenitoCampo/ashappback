@@ -70,3 +70,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2Ei
 ###
 GET http://localhost:3000/api/users/profile/20
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJjYWR1Y2EiOjE2MTcyNjQwNzMsImlhdCI6MTYxNjY2NDA3M30.JPFVBHlwr6J3wxHv4uWDnvplWf3-8QcceAocJ2S8G6s
+
+###
+POST http://localhost:3000/api/products/carrito/15
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImNhZHVjYSI6MTYxNzYxNzM3MywiaWF0IjoxNjE3MDE3MzczfQ.tweQpecbAS5dMBf4VuOW7TBWcHRQI7uURHAHCHZ8N2k

@@ -20,6 +20,7 @@ const create = (pObject) => {
     });
 }
 
+
 const getByIdProduct = (pId) => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM register_product WHERE id = ?', [pId], (err, rows) => {
@@ -62,11 +63,25 @@ const getProductsUserById = (pId) => {
 
 }
 
+//Insertar en carrito
+const insertCarrito = (pProductId, pUserId) => {
+    console.log(pProductId)
+    return new Promise((resolve, reject) => {
+        db.query('INSERT INTO carrito(fk_user, fk_product) values (?, ?)',
+            [pProductId, pUserId], (err, result) => {
+                if (err) return reject(err);
+                console.log(result);
+                resolve(result);
+            })
+    })
+}
+
 module.exports = {
     getAllProducts,
     create,
     getByIdProduct,
     deleteById,
     updateById,
-    getProductsUserById
+    getProductsUserById,
+    insertCarrito
 }

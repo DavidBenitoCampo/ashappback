@@ -7,7 +7,7 @@ const fs = require('fs');
 var router = express.Router();
 
 
-const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById } = require('../../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, insertCarrito } = require('../../models/product');
 
 
 
@@ -56,7 +56,12 @@ router.post('/', upload.single('imagen'), async (req, res) => {
   }
 });
 
+router.post('/carrito/:productId', async (req, res) => {
 
+  const result = await insertCarrito(req.params.productId, req.userId);
+  res.json(result);
+  console.log(result)
+})
 
 
 
@@ -93,6 +98,12 @@ router.get('/user/:userId', async (req, res) => {
     res.status(422).json({ error: error.message });
   }
 });
+
+router.get('/carrito/:productId', (req, res) => {
+  console.log(req.userId);
+  console.log(req.params.productId);
+
+})
 
 
 
