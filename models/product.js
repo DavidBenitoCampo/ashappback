@@ -63,7 +63,6 @@ const getProductsUserById = (pId) => {
 
 }
 
-<<<<<<< HEAD
 const getByCategory = (tipo_producto) => {
     return new Promise((resolve, reject) => {
         db.query(
@@ -72,9 +71,10 @@ const getByCategory = (tipo_producto) => {
             (err, rows) => {
                 if (err) return reject(err);
                 resolve(rows);
-            }
-        )
-=======
+            })
+    })
+}
+
 //Insertar en carrito
 const insertCarrito = (pProductId, pUserId) => {
     console.log(pProductId)
@@ -85,7 +85,6 @@ const insertCarrito = (pProductId, pUserId) => {
                 console.log(result);
                 resolve(result);
             })
->>>>>>> ac20660a022a2b5b50a92fdce4aec7b416cb879a
     })
 }
 
@@ -96,9 +95,6 @@ module.exports = {
     deleteById,
     updateById,
     getProductsUserById,
-<<<<<<< HEAD
-    getByCategory
-=======
+    getByCategory,
     insertCarrito
->>>>>>> ac20660a022a2b5b50a92fdce4aec7b416cb879a
 }

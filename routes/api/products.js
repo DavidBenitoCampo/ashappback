@@ -7,12 +7,8 @@ const fs = require('fs');
 var router = express.Router();
 
 
-<<<<<<< HEAD
-const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, getByCategory } = require('../../models/product');
+const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, getByCategory, insertCarrito } = require('../../models/product');
 
-=======
-const { getAllProducts, getByIdProduct, create, deleteById, updateById, getProductsUserById, insertCarrito } = require('../../models/product');
->>>>>>> ac20660a022a2b5b50a92fdce4aec7b416cb879a
 
 const { getAllCarrito } = require('../../models/order');
 
